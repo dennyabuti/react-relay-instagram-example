@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
   module.exports = {
@@ -25,6 +26,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
     plugins: [
       new HtmlWebpackPlugin({
         template: 'index.html'
-      })
+      }),
+      new webpack.DefinePlugin({
+        'process.env': {
+          'NODE_ENV': JSON.stringify('production'),
+          'GRAPHQL_URL': JSON.stringify(process.env.GRAPHQL_ENDPOINT),
+        },
+      }),
     ]
   }

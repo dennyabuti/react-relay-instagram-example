@@ -25,15 +25,10 @@ Relay.injectNetworkLayer(
 
 ### 3. Configure build schema endpoint
 
-Open `package.json` and insert your endpoint in the following line:
+Set the `GRAPHQL_ENDPOINT` variable by passing it to your npm script.
 
-
-```json
-  "graphql": {
-    "request": {
-      "url": "https://api.graph.cool/relay/v1/__PROJECT_ID__"
-    }
-  },
+```sh
+GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/__PROJECT_ID__ npm start
 ```
 
 This step is needed in order to support Relay. More info can be found here: [babel-plugin-react-relay](https://github.com/graphcool/babel-plugin-react-relay).
@@ -45,9 +40,19 @@ You're done configuring the example application. Please run the following comman
 
 ```sh
 npm install
-npm start
+GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/__PROJECT_ID__ npm start
 ```
 
+### 5. Deploy the example
+
+```sh
+npm install -g netlify-cli
+netlify deploy
+```
+
+or click the deploy button to see it live.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/graphcool-examples/react-relay-instagram-example)
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 

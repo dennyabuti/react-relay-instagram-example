@@ -4,11 +4,6 @@
     "start": "webpack-dev-server -d --hot --inline --history-api-fallback --no-info --port 3000",
     "build": "webpack -d --inline --history-api-fallback --config webpack.config.js"
   },
-  "graphql": {
-    "request": {
-      "url": "https://api.graph.cool/relay/v1/__PROJECT_ID__"
-    }
-  },
   "dependencies": {
     "classnames": "2.2.5",
     "file-loader": "^0.9.0",
